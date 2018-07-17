@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="zs" class="com.yzx.service.ZhangSan"></bean>
+	<!-- 
+		id：自己定义，用来映射
+		class：对应的类的路径
+		如果有参数的还需声明<property> name指的是参数名，ref为映射
+	 -->
+  	<bean id="ls" class="com.yzx.service.LiSi"></bean>
+  	<bean id="jw" class="com.yzx.service.JavaWork">
+  		<property name="tester" ref="zs"></property>
+  	</bean>
+</beans>
